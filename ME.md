@@ -1,19 +1,24 @@
-## File for taking notes about how Rails works
+# File for taking notes about how Rails works
+
 - Rails uses MVC arch
 - Gemfile: File where shows all the dependencies of Rails, similar to composer.json
 
-### App Folder
+## App Folder
+
 - assets: Contains css/media/js
 - controller: C of MVC arch
 - javascript: js files
 - models: M of MVC arch
 - views: V of MVC arch
 
-### Config folder
+## Config folder
+
 - routes.rb: define web routes
 
-### Routes
+## Routes
+
 To seet a route as root
+
 ```
 Rails.application.routes.draw do
   #get 'home/index'
@@ -21,7 +26,8 @@ Rails.application.routes.draw do
 end
 ```
 
-### Commands
+## Commands
+
 - Generate a page: rails g / rails generate. Example:
 
 ```
@@ -44,6 +50,34 @@ Running via Spring preloader in process 194945
 ```
 
 - Show all routes:
+
 ```
 $ rails routes
+```
+
+## Pages
+
+To create a new page manually we need to create his template, the controller or function in his controller and add it to the routes
+
+## ERB
+
+ERB is the default html template for Rails, similar to Twig or Blade.
+
+- Partials: Create a erb template and render it in the template that you want to use it like this:
+
+```
+<%= render "home/header" %>
+      <div class="container">
+        <%= yield %>
+      </div>
+<%= render "home/footer" %>
+```
+
+- Links: Replaces anchor tag to this piece of code to link the app to other pages. It has 3 main attributes
+ - Text to display in the anchor tag
+ - path to go, the structure is [controller]_[function]_path
+ - class name
+
+```
+<%= lin_to '[text to show]', [path], class: "[css class name]" >
 ```
