@@ -55,6 +55,55 @@ Running via Spring preloader in process 194945
 $ rails routes
 ```
 
+- Database crud: Investigate about Scaffold. This example creates a table
+
+  List to supported Types: https://guides.rubyonrails.org/v3.2/migrations.html/#supported-types
+
+```
+$rails g scaffold todo name:string task:string
+
+Running via Spring preloader in process 99374
+      invoke  active_record
+      create    db/migrate/20210804152916_create_todos.rb
+      create    app/models/todo.rb
+      invoke    test_unit
+      create      test/models/todo_test.rb
+      create      test/fixtures/todos.yml
+      invoke  resource_route
+       route    resources :todos
+      invoke  scaffold_controller
+      create    app/controllers/todos_controller.rb
+      invoke    erb
+      create      app/views/todos
+      create      app/views/todos/index.html.erb
+      create      app/views/todos/edit.html.erb
+      create      app/views/todos/show.html.erb
+      create      app/views/todos/new.html.erb
+      create      app/views/todos/_form.html.erb
+      invoke    resource_route
+      invoke    test_unit
+      create      test/controllers/todos_controller_test.rb
+      create      test/system/todos_test.rb
+      invoke    helper
+      create      app/helpers/todos_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+      create      app/views/todos/index.json.jbuilder
+      create      app/views/todos/show.json.jbuilder
+      create      app/views/todos/_todo.json.jbuilder
+      invoke  assets
+      invoke    scss
+      create      app/assets/stylesheets/todos.scss
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.scss
+```
+
+- Create schema:
+```
+$ rails db:migrate
+```
+
+
 ## Pages
 
 To create a new page manually we need to create his template, the controller or function in his controller and add it to the routes
