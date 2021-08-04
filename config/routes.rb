@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # resources manages to create all crud routes
   resources :todos
   resources :todo
