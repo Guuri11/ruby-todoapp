@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Todos</h1>
+  <h1>Todos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Task</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @todos.each do |todo| %>
+  <table class="table table-striped table-hover">
+    <thead>
       <tr>
-        <td><%= todo.name %></td>
-        <td><%= todo.task %></td>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Task</th>
+        <th colspan="3">Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @todos.each do |todo| %>
+        <tr>
+          <td><%= todo.name %></td>
+          <td><%= todo.task %></td>
+          <td><%= link_to 'Show', todo %></td>
+          <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+          <td><%= link_to 'Delete', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Todo', new_todo_path %>
+  <br>
+
+  <%= link_to '+ New Todo', new_todo_path, class: "btn btn-primary" %>
+</div>
