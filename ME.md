@@ -130,3 +130,13 @@ ERB is the default html template for Rails, similar to Twig or Blade.
 ```
 <%= lin_to '[text to show]', [path], class: "[css class name]" >
 ```
+
+## Third party packages
+https://rubygems.org/
+
+## User system
+Usually is used Devise, Gem package to manage all user flow
+- Install
+```
+gem install devise
+```
