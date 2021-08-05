@@ -21,6 +21,10 @@
     <%= form.text_field :task, class: "form-control" %>
   </div>
 
+  <div class="field mb-3">
+    <%= form.number_field :user_id, class: "form-control", value: current_user.id, id: :todo_user_id, type: :hidden %>
+  </div>
+
   <div class="actions">
     <%= form.submit class: "btn btn-primary" %>
   </div>

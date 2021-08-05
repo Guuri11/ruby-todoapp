@@ -140,3 +140,19 @@ Usually is used Devise, Gem package to manage all user flow
 ```
 gem install devise
 ```
+
+## Associations (1-N example)
+
+#### Todo Model
+```
+belongs_to : user
+```
+#### User Model
+```
+has_many :todos
+
+```
+#### Command
+```
+$ rails g migration add_user_id_to_friends user_id:integer:index
+```
